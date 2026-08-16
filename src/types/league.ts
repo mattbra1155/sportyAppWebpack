@@ -9,6 +9,11 @@ export interface AllLeaguesResponse {
     leagues: League[] | null;
 }
 
+// search_all_leagues.php nests its league results under "countries"
+export interface SearchLeaguesResponse {
+    countries: League[] | null;
+}
+
 export interface SeasonBadge {
     strSeason: string;
     strBadge: string | null;
