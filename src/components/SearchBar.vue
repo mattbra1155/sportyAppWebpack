@@ -32,6 +32,8 @@ export default defineComponent({
   max-width: 320px;
 
   :deep(.el-input__wrapper) {
+    box-sizing: border-box;
+    height: 36px;
     border-radius: 999px;
     padding: 4px 16px;
   }

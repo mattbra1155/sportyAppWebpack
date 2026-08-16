@@ -153,6 +153,7 @@ export default defineComponent({
   &__filters {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     gap: 12px;
     background: #fff;
     padding: 16px;
