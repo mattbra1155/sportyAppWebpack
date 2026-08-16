@@ -1,13 +1,10 @@
 <template>
-  <el-input
-    :model-value="modelValue"
-    placeholder="Search leagues by name..."
-    clearable
-    class="search-bar"
-    @update:model-value="$emit('update:modelValue', $event)"
-  >
+  <el-input :model-value="modelValue" placeholder="Search leagues by name..." clearable class="search-bar"
+    @update:model-value="$emit('update:modelValue', $event)">
     <template #prefix>
-      <el-icon><Search /></el-icon>
+      <el-icon>
+        <Search />
+      </el-icon>
     </template>
   </el-input>
 </template>
@@ -33,5 +30,14 @@ export default defineComponent({
 .search-bar {
   width: 100%;
   max-width: 320px;
+
+  :deep(.el-input__wrapper) {
+    border-radius: 999px;
+    padding: 4px 16px;
+  }
+
+  :deep(.el-input__wrapper.is-focus) {
+    box-shadow: 0 0 0 1px var(--sporty-red) inset;
+  }
 }
 </style>

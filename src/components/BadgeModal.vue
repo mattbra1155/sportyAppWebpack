@@ -1,18 +1,12 @@
 <template>
-  <el-dialog
-    :model-value="visible"
-    :title="league?.strLeague"
-    width="360px"
-    @update:model-value="$emit('update:visible', $event)"
-  >
+  <el-dialog :model-value="visible" :title="league?.strLeague" width="360px"
+    @update:model-value="$emit('update:visible', $event)">
     <div class="badge-modal">
-      <el-icon v-if="loading" class="is-loading badge-modal__spinner"><Loading /></el-icon>
-      <img
-        v-else-if="badge?.strBadge"
-        :src="badge.strBadge"
-        :alt="`${league?.strLeague} season badge`"
-        class="badge-modal__image"
-      />
+      <el-icon v-if="loading" class="is-loading badge-modal__spinner">
+        <Loading />
+      </el-icon>
+      <img v-else-if="badge?.strBadge" :src="badge.strBadge" :alt="`${league?.strLeague} season badge`"
+        class="badge-modal__image" />
       <p v-else class="badge-modal__empty">No season badge available for this league.</p>
     </div>
   </el-dialog>
@@ -62,10 +56,16 @@ export default defineComponent({
 
   &__spinner {
     font-size: 32px;
+    color: var(--sporty-red);
   }
 
   &__empty {
-    color: #909399;
+    color: var(--sporty-grey);
   }
+}
+
+:deep(.el-dialog__title) {
+  font-weight: 700;
+  color: var(--sporty-black);
 }
 </style>
